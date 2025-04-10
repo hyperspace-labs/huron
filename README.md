@@ -1,6 +1,6 @@
 # Orbit Channel 
 
-A decentralized registry of released ip by Hyperspace Labs for [Orbit](https://github.com/chaseruskin/orbit), an agile package manager and extensible build tool for hardware description languages (HDLs).
+A decentralized registry of released ip by Hyperspace Labs for [Orbit](https://github.com/chaseruskin/orbit), an agile package manager and extensible build tool for VHDL/SystemVerilog.
 
 ## Installing
 

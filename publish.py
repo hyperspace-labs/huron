@@ -1,7 +1,7 @@
 import subprocess
 import os
 
-chan_index = os.environ.get("ORBIT_CHAN_INDEX")
+chan_index = os.environ.get("ORBIT_CHANNEL_IP_DIR")
 ip_name = os.environ.get("ORBIT_IP_NAME")
 ip_version = os.environ.get("ORBIT_IP_VERSION") 
 
