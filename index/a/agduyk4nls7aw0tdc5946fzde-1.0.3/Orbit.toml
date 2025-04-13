@@ -1,0 +1,6 @@
+[ip]
+name = "gates"
+uuid = "agduyk4nls7aw0tdc5946fzde"
+version = "1.0.3"
+source = "https://github.com/hyperspace-labs/gates.git"
+public = ["rtl"]
