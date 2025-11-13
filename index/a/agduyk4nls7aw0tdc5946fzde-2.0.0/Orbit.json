@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "manifest": {
+    "project": {
+      "name": "gates",
+      "uuid": "agduyk4nls7aw0tdc5946fzde",
+      "version": "2.0.0",
+      "library": null,
+      "description": null,
+      "documentation": null,
+      "authors": null,
+      "repository": "https://github.com/hyperspace-labs/gates.git",
+      "channels": null,
+      "public": [
+        "rtl"
+      ],
+      "ignore": null,
+      "readme": null,
+      "license": null,
+      "license-file": null
+    }
+  },
+  "units": [
+    {
+      "identifier": "nand_gate",
+      "type": "entity",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "rtl/nand_gate.vhd"
+      ],
+      "dependencies": []
+    },
+    {
+      "identifier": "and_gate",
+      "type": "entity",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "rtl/and_gate.vhd"
+      ],
+      "dependencies": [
+        "nand_gate"
+      ]
+    },
+    {
+      "identifier": "or_gate",
+      "type": "entity",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "rtl/or_gate.vhd"
+      ],
+      "dependencies": [
+        "nand_gate"
+      ]
+    }
+  ]
+}
