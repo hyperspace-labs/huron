@@ -1,12 +1,10 @@
-# Orbit configuration file
-
 [[channel]]
-name = "hyperspace-labs"
-description = "Available ip from hyperspace labs"
+name = "huron"
+description = "Projects by hyperspace labs"
 root = "./index"
 
 # if the channel is tied to a remote, have ability to synchronize with latest
 sync.command = ["git", "pull"]
 
 # command to use immediately after copy to destination
-post.command = ["python", "publish.py"]
+post.command = ["python3", "publish.py"]
