@@ -2,9 +2,12 @@
 name = "huron"
 description = "Projects by hyperspace labs"
 root = "./index"
-
-# if the channel is tied to a remote, have ability to synchronize with latest
 sync.command = ["git", "pull"]
-
-# command to use immediately after copy to destination
 post.command = ["python3", "publish.py"]
+
+
+[[protocol]]
+name = "git"
+description = "Download projects using git"
+command = ["git", "clone", "{{ orbit.project.repository }}", "-b", "{{ orbit.project.version }}"]
+patterns = ["*.git"]

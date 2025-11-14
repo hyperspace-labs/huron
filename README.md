@@ -16,14 +16,24 @@ git clone https://github.com/hyperspace-labs/huron.git "$(orbit env ORBIT_HOME)/
 orbit config --push include="channels/huron/config.toml"
 ```
 
-## Using
+## Usage
 
 To view available projects from Huron (and potentially any other configured channels), run:
 ```
 orbit search --available
 ```
 
-## Synchronizing
+To get more insight into a particular project, run:
+```
+orbit info <project>
+```
+
+To install a particular project, run:
+```
+orbit install <project>
+```
+
+## Synchronization
 
 To pull the latest available versions and projects from Huron (and potentially any other configured channels), run:
 ```
