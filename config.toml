@@ -9,5 +9,5 @@ post.command = ["python3", "publish.py"]
 [[protocol]]
 name = "git"
 description = "Download projects using git"
-command = ["git", "clone", "{{ orbit.project.repository }}", "-b", "{{ orbit.project.version }}"]
+command = ["git", "clone", "{{ orbit.project.source }}", "-b", "{{ orbit.project.version }}"]
 patterns = ["*.git"]
