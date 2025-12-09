@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "manifest": {
+    "project": {
+      "name": "steel",
+      "uuid": "7hex7l1oem1qefisd25jkcni2",
+      "version": "1.0.1",
+      "library": "stl",
+      "description": "A set of packages extending standard functionality",
+      "documentation": null,
+      "authors": null,
+      "source": "https://github.com/hyperspace-labs/steel.git",
+      "channels": null,
+      "public": [
+        "src"
+      ],
+      "ignore": null,
+      "readme": null,
+      "license": "Apache-2.0",
+      "license-file": null,
+      "metadata": {
+        "test": [
+          {
+            "tb": "types_tb"
+          },
+          {
+            "tb": "math_tb"
+          },
+          {
+            "tb": "manip_tb",
+            "trials": [
+              {
+                "generics": {
+                  "FOO": true
+                }
+              },
+              {
+                "generics": {
+                  "FOO": false
+                }
+              }
+            ]
+          },
+          {
+            "tb": "dims_tb"
+          },
+          {
+            "tb": "cast_tb"
+          }
+        ]
+      }
+    }
+  },
+  "units": [
+    {
+      "name": "types_tb",
+      "type": "entity",
+      "language": "vhdl",
+      "visibility": "private",
+      "sources": [
+        "tests/types_tb.vhd"
+      ],
+      "dependencies": [
+        "types"
+      ]
+    },
+    {
+      "name": "types",
+      "type": "package",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "src/types.vhd"
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "cast_tb",
+      "type": "entity",
+      "language": "vhdl",
+      "visibility": "private",
+      "sources": [
+        "tests/cast_tb.vhd"
+      ],
+      "dependencies": [
+        "cast",
+        "types"
+      ]
+    },
+    {
+      "name": "prelude",
+      "type": "context",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "src/prelude.vhd"
+      ],
+      "dependencies": [
+        "math",
+        "cast",
+        "types"
+      ]
+    },
+    {
+      "name": "dims",
+      "type": "package",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "src/dims.vhd"
+      ],
+      "dependencies": [
+        "types",
+        "cast"
+      ]
+    },
+    {
+      "name": "math_tb",
+      "type": "entity",
+      "language": "vhdl",
+      "visibility": "private",
+      "sources": [
+        "tests/math_tb.vhd"
+      ],
+      "dependencies": [
+        "types",
+        "cast",
+        "math"
+      ]
+    },
+    {
+      "name": "dims_tb",
+      "type": "entity",
+      "language": "vhdl",
+      "visibility": "private",
+      "sources": [
+        "tests/dims_tb.vhd"
+      ],
+      "dependencies": [
+        "types",
+        "dims",
+        "cast"
+      ]
+    },
+    {
+      "name": "manip",
+      "type": "package",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "src/manip.vhd"
+      ],
+      "dependencies": [
+        "types"
+      ]
+    },
+    {
+      "name": "math",
+      "type": "package",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "src/math.vhd"
+      ],
+      "dependencies": [
+        "types"
+      ]
+    },
+    {
+      "name": "cast",
+      "type": "package",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "src/cast.vhd"
+      ],
+      "dependencies": [
+        "types"
+      ]
+    },
+    {
+      "name": "manip_tb",
+      "type": "entity",
+      "language": "vhdl",
+      "visibility": "private",
+      "sources": [
+        "tests/manip_tb.vhd"
+      ],
+      "dependencies": [
+        "types",
+        "cast",
+        "manip"
+      ]
+    }
+  ]
+}

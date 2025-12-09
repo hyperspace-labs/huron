@@ -1,0 +1,34 @@
+[project]
+name = "steel"
+uuid = "7hex7l1oem1qefisd25jkcni2"
+version = "1.0.1"
+library = "stl"
+description = "A set of packages extending standard functionality"
+source = "https://github.com/hyperspace-labs/steel.git"
+public = ["src"]
+license = "Apache-2.0"
+
+[[project.metadata.test]]
+tb = "types_tb"
+
+[[project.metadata.test]]
+tb = "math_tb"
+
+[[project.metadata.test]]
+tb = "manip_tb"
+
+[[project.metadata.test.trials]]
+
+[project.metadata.test.trials.generics]
+FOO = true
+
+[[project.metadata.test.trials]]
+
+[project.metadata.test.trials.generics]
+FOO = false
+
+[[project.metadata.test]]
+tb = "dims_tb"
+
+[[project.metadata.test]]
+tb = "cast_tb"
