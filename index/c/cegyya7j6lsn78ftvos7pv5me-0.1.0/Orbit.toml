@@ -1,0 +1,61 @@
+[project]
+name = "glyph"
+uuid = "cegyya7j6lsn78ftvos7pv5me"
+version = "0.1.0"
+description = "Error-correction codes"
+keywords = ["ecc", "code"]
+source = "https://github.com/chaseruskin/glyph.git"
+public = ["src"]
+
+[[project.metadata.test.unit]]
+dut = "parity"
+
+[project.metadata.test.unit.generics]
+EVEN = true
+W = 5
+
+[[project.metadata.test.unit]]
+dut = "parity"
+
+[project.metadata.test.unit.generics]
+EVEN = false
+W = 8
+
+[[project.metadata.test.unit]]
+dut = "hamming_enc"
+
+[project.metadata.test.unit.generics]
+K = 4
+
+[[project.metadata.test.unit]]
+dut = "hamming_enc"
+
+[project.metadata.test.unit.generics]
+K = 32
+
+[[project.metadata.test.unit]]
+dut = "hamming_enc"
+
+[project.metadata.test.unit.generics]
+K = 64
+
+[[project.metadata.test.unit]]
+dut = "hamming_dec"
+
+[project.metadata.test.unit.generics]
+K = 4
+
+[[project.metadata.test.unit]]
+dut = "hamming_dec"
+
+[project.metadata.test.unit.generics]
+K = 32
+
+[[project.metadata.test.unit]]
+dut = "hamming_dec"
+
+[project.metadata.test.unit.generics]
+K = 64
+
+[dependencies]
+steel = "1.0.1"

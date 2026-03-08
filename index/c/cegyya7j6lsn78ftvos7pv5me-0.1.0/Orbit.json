@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "manifest": {
+    "project": {
+      "name": "glyph",
+      "uuid": "cegyya7j6lsn78ftvos7pv5me",
+      "version": "0.1.0",
+      "library": null,
+      "description": "Error-correction codes",
+      "documentation": null,
+      "authors": null,
+      "keywords": [
+        "ecc",
+        "code"
+      ],
+      "source": "https://github.com/chaseruskin/glyph.git",
+      "channels": null,
+      "public": [
+        "src"
+      ],
+      "ignore": null,
+      "readme": null,
+      "license": null,
+      "license-file": null,
+      "metadata": {
+        "test": {
+          "unit": [
+            {
+              "dut": "parity",
+              "generics": {
+                "EVEN": true,
+                "W": 5
+              }
+            },
+            {
+              "dut": "parity",
+              "generics": {
+                "EVEN": false,
+                "W": 8
+              }
+            },
+            {
+              "dut": "hamming_enc",
+              "generics": {
+                "K": 4
+              }
+            },
+            {
+              "dut": "hamming_enc",
+              "generics": {
+                "K": 32
+              }
+            },
+            {
+              "dut": "hamming_enc",
+              "generics": {
+                "K": 64
+              }
+            },
+            {
+              "dut": "hamming_dec",
+              "generics": {
+                "K": 4
+              }
+            },
+            {
+              "dut": "hamming_dec",
+              "generics": {
+                "K": 32
+              }
+            },
+            {
+              "dut": "hamming_dec",
+              "generics": {
+                "K": 64
+              }
+            }
+          ]
+        }
+      }
+    },
+    "dependencies": {
+      "steel": "1.0.1"
+    }
+  },
+  "units": [
+    {
+      "name": "golay_dec",
+      "type": "entity",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "src/golay_dec.vhd"
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "golay_enc",
+      "type": "entity",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "src/golay_enc.vhd"
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "hamming_enc",
+      "type": "entity",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "src/hamming_enc.vhd"
+      ],
+      "dependencies": [
+        "hamming_pkg",
+        "parity"
+      ]
+    },
+    {
+      "name": "hamming_pkg",
+      "type": "package",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "src/hamming_pkg.vhd"
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "hamming_dec",
+      "type": "entity",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "src/hamming_dec.vhd"
+      ],
+      "dependencies": [
+        "hamming_pkg",
+        "parity"
+      ]
+    },
+    {
+      "name": "parity",
+      "type": "entity",
+      "language": "vhdl",
+      "visibility": "public",
+      "sources": [
+        "src/parity.vhd"
+      ],
+      "dependencies": []
+    }
+  ]
+}
